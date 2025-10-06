@@ -16,7 +16,7 @@ namespace Health_Systems_KatelynNicholson
         //Health
         static int health = 100;
         static int sheild = 100;
-        static int[] healthStatus = { 1, 101}; //1 - 100
+        static string healthStatus = ""; // health + healthWord = Console.WriteLIne ... 100. Perfect Health!
         static int[] lives = { 1, 4 }; // 1 - 3
         static string[] healthWord = { "Perfect Health", "Healthy", "Hurt", "Badly Hurt", "Imminent Danger" };
         //Weapons
@@ -32,7 +32,7 @@ namespace Health_Systems_KatelynNicholson
 
         static void Main()
         {
-
+             
             ShowHUD();
             //TakeDamage();
             //Heal();
@@ -41,11 +41,13 @@ namespace Health_Systems_KatelynNicholson
 
         }
 
-        static void ShowHUD(int healthStatus, int sheild, int lives)
+        static void ShowHUD(int health, int healthStatus, int sheild, int lives, int currentWeapon, int currentAmmo)
         {
             Console.WriteLine("\n------------------HUD------------------");
-            Console.WriteLine($"Health: {healthStatus} Sheild: {sheild}  Lives: {lives}");
+            Console.WriteLine($"Health: {health}. {healthStatus}! Sheild: {sheild}  Lives: {lives}");
+            Console.WriteLine($"Weapon: {currentWeapon} Ammo: {currentAmmo}");
             Console.WriteLine("-----------------------------------------\n")
+            Console.ReadKey():
 
             //shows HUD
             //shows health, sheild, lives
@@ -57,6 +59,11 @@ namespace Health_Systems_KatelynNicholson
             //= 75 hurt
             //=90 healthy
             // =100 perfect health
+        }
+
+        static string GetHealthStatus(int healthStatus)
+        {
+
         }
 
         static void TakeDamage(int damage)
