@@ -18,6 +18,7 @@ namespace Health_Systems_KatelynNicholson
         static int sheild = 100;
         static int[] healthStatus = { 1, 101}; //1 - 100
         static int[] lives = { 1, 4 }; // 1 - 3
+        static string[] healthWord = { "Perfect Health", "Healthy", "Hurt", "Badly Hurt", "Imminent Danger" };
         //Weapons
         static int currentAmmmo = 0;
         static int currentWeapon = 0;
@@ -32,10 +33,20 @@ namespace Health_Systems_KatelynNicholson
         static void Main()
         {
 
+            ShowHUD();
+            //TakeDamage();
+            //Heal();
+            //RegenerateSheild();
+            //Revive();
+
         }
 
-        static void ShowHUD(int healthStatus)
+        static void ShowHUD(int healthStatus, int sheild, int lives)
         {
+            Console.WriteLine("\n------------------HUD------------------");
+            Console.WriteLine($"Health: {healthStatus} Sheild: {sheild}  Lives: {lives}");
+            Console.WriteLine("-----------------------------------------\n")
+
             //shows HUD
             //shows health, sheild, lives
             // shows health as a number 0 > 100%
