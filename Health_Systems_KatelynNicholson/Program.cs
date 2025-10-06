@@ -7,16 +7,26 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Health_Systems_KatelynNicholson
 {
     internal class Program
     {
+
+        //Health
         static int health = 100;
         static int sheild = 100;
-        static int[] healthStatus = { 1, 101};
-        static int[] lives = { 1, 4 };
+        static int[] healthStatus = { 1, 101}; //1 - 100
+        static int[] lives = { 1, 4 }; // 1 - 3
+        //Weapons
+        static int currentAmmmo = 0;
+        static int currentWeapon = 0;
+        static int[] weaponPower = { 5, 10, 20, 15 };
+        static int[] maxAmmo = { 0, 5, 3, 35 };
+        static string[] weaponNames = {"Bat", "Hand Gun", "Shot Gun", "Assult Rifle"}
+        //Enemy
+        static int enemyHealth = 100;
+
 
 
         static void Main()
@@ -24,20 +34,21 @@ namespace Health_Systems_KatelynNicholson
 
         }
 
-        static void SHowHUD(int healthStatus)
+        static void ShowHUD(int healthStatus)
         {
             //shows HUD
             //shows health, sheild, lives
             // shows health as a number 0 > 100%
             //show health as a string as follows:
-            //health int = 10 imminent danger
+            //health int
+            //= 10 imminent danger
             // = 50 badly hurt
             //= 75 hurt
             //=90 healthy
             // =100 perfect health
         }
 
-        static void TakeDamage()
+        static void TakeDamage(int damage)
         {
             //modifies health, shield
             //shield depletes first
@@ -50,7 +61,7 @@ namespace Health_Systems_KatelynNicholson
             //error checking
         }
 
-        static void heal(int hp)
+        static void Heal(int hp)
         {
             //modifies health
             //based on parameter input(input describes how much player is healed)
