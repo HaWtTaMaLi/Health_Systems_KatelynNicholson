@@ -1,0 +1,2 @@
+C:\Katelyn's UnityProjects\Health_Systems_KatelynNicholson\Health_Systems_KatelynNicholson\obj\Debug\Health_Systems_KatelynNicholson.csproj.AssemblyReference.cache
+C:\Katelyn's UnityProjects\Health_Systems_KatelynNicholson\Health_Systems_KatelynNicholson\obj\Debug\Health_Systems_KatelynNicholson.csproj.CoreCompileInputs.cache

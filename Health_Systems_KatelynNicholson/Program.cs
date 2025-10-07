@@ -24,7 +24,7 @@ namespace Health_Systems_KatelynNicholson
         static int currentWeapon = 0;
         static int[] weaponPower = { 5, 10, 20, 15 };
         static int[] maxAmmo = { 0, 5, 3, 35 };
-        static string[] weaponNames = {"Bat", "Hand Gun", "Shot Gun", "Assult Rifle"}
+        static string[] weaponNames = { "Bat", "Hand Gun", "Shot Gun", "Assult Rifle" };
         //Enemy
         static int enemyHealth = 100;
 
@@ -32,8 +32,8 @@ namespace Health_Systems_KatelynNicholson
 
         static void Main()
         {
-             
-            ShowHUD();
+
+            ShowHUD(100, 0, 100, 3, 0, 0);
             //TakeDamage();
             //Heal();
             //RegenerateSheild();
@@ -46,24 +46,28 @@ namespace Health_Systems_KatelynNicholson
             Console.WriteLine("\n------------------HUD------------------");
             Console.WriteLine($"Health: {health}. {healthStatus}! Sheild: {sheild}  Lives: {lives}");
             Console.WriteLine($"Weapon: {currentWeapon} Ammo: {currentAmmo}");
-            Console.WriteLine("-----------------------------------------\n")
-            Console.ReadKey():
+            Console.WriteLine("-----------------------------------------\n");
+            Console.ReadKey();
 
             //shows HUD
             //shows health, sheild, lives
             // shows health as a number 0 > 100%
             //show health as a string as follows:
-            //health int
-            //= 10 imminent danger
-            // = 50 badly hurt
-            //= 75 hurt
-            //=90 healthy
-            // =100 perfect health
+
         }
 
-        static string GetHealthStatus(int healthStatus)
+        static void GetHealthStatus()
         {
-
+            if (health == 100)
+                healthStatus = healthWord[0]; //Perfect Health
+            else if (health >= 99)
+                    healthStatus = healthWord[1]; //Healthy
+            else if (health >= 75)
+                healthStatus = healthWord[2]; //Hurt
+            else if (health >= 50)
+                healthStatus = healthWord[3]; //Badly Hurt
+            else
+                healthStatus = healthWord[4]; //Imminent Danger
         }
 
         static void TakeDamage(int damage)
