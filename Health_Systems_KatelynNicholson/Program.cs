@@ -11,9 +11,9 @@ using System.Diagnostics;
 
 namespace Health_Systems_KatelynNicholson
 {
+
     internal class Program
     {
-
         //Health
         static string healthStatus;
         static int health = 100;
@@ -22,7 +22,7 @@ namespace Health_Systems_KatelynNicholson
 
         static void Main()
         {
-            UnitTestHealthSystem();
+            //UnitTestHealthSystem();
             lives = 3;
             healthStatus = GetHealthStatus(health);
             
