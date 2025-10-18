@@ -37,55 +37,6 @@ namespace Health_Systems_KatelynNicholson
             Heal(5);
             Console.ReadKey();
 
-            RegenerateSheild(5);
-            Console.ReadKey();
-            Console.Clear();
-
-            ShowHUD(health, healthStatus, shield, lives);
-            Console.ReadKey();
-
-            TakeDamage(50);
-            Console.ReadKey();
-
-            TakeDamage(50);
-            Console.ReadKey();
-            Console.Clear();
-
-            ShowHUD(health, healthStatus, shield, lives);
-            Console.ReadKey();
-
-            RegenerateShield(5);
-            Console.ReadKey();
-
-            TakeDamage(50);
-            Console.ReadKey();
-            Console.Clear();
-
-            ShowHUD(health, healthStatus, shield, lives);
-            Console.ReadKey();
-
-            TakeDamage(50);
-            Console.ReadKey();
-            Console.Clear();
-
-            ShowHUD(health, healthStatus, shield, lives);
-            Console.ReadKey();
-
-            Revive();
-            Console.ReadKey();
-            Console.Clear();
-
-            ShowHUD(health, healthStatus, shield, lives);
-            TakeDamage(50);
-            Console.ReadKey();
-            Console.Clear();
-
-            ShowHUD(health, healthStatus, shield, lives);
-            Console.ReadKey();
-
-            Heal(5);
-            Console.ReadKey();
-
             RegenerateShield(5);
             Console.ReadKey();
             Console.Clear();
@@ -152,7 +103,56 @@ namespace Health_Systems_KatelynNicholson
             ShowHUD(health, healthStatus, shield, lives);
             Console.ReadKey();
 
-            RegenerateSheild(5);
+            RegenerateShield(5);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Revive();
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Heal(5);
+            Console.ReadKey();
+
+            RegenerateShield(5);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            RegenerateShield(5);
             Console.ReadKey();
 
             TakeDamage(50);
@@ -306,4 +306,5 @@ namespace Health_Systems_KatelynNicholson
             }
         }
     }
+
 }
