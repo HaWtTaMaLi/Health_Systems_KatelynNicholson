@@ -14,127 +14,296 @@ namespace Health_Systems_KatelynNicholson
     {
 
         //Health
+        static string healthStatus;
         static int health = 100;
-        static int sheild = 100;
-        static string healthStatus = ""; // health + healthWord = Console.WriteLIne ... 100. Perfect Health!
-        static int[] lives = { 1, 4 }; // 1 - 3
-        static string[] healthWord = { "Perfect Health", "Healthy", "Hurt", "Badly Hurt", "Imminent Danger" };
-        //Weapons
-        static int currentAmmmo = 0;
-        static int currentWeapon = 0;
-        static int[] weaponPower = { 5, 10, 20, 15 };
-        static int[] maxAmmo = { 0, 5, 3, 35 };
-        static string[] weaponNames = { "Bat", "Hand Gun", "Shot Gun", "Assult Rifle" };
-        //Enemy
-        static int enemyHealth = 100;
-
-
+        static int shield = 100;
+        static int lives = 3;
 
         static void Main()
         {
+            lives = 3;
+            healthStatus = GetHealthStatus(health);
 
-            ShowHUD(100, 0, 100, 3, 0, 0);
-            //TakeDamage();
-            //Heal();
-            //RegenerateSheild();
-            //Revive();
 
-        }
+            //Game Play
+            ShowHUD(health, healthStatus, shield, lives);
+            TakeDamage(50); //damage health, shield
+            Console.ReadKey();
+            Console.Clear();
 
-        static void ShowHUD(int health, int healthStatus, int sheild, int lives, int currentWeapon, int currentAmmo)
-        {
-            Console.WriteLine("\n------------------HUD------------------");
-            Console.WriteLine($"Health: {health}. {healthStatus}! Sheild: {sheild}  Lives: {lives}");
-            Console.WriteLine($"Weapon: {currentWeapon} Ammo: {currentAmmo}");
-            Console.WriteLine("-----------------------------------------\n");
+            ShowHUD(health, healthStatus, shield, lives);
             Console.ReadKey();
 
-            //shows HUD
-            //shows health, sheild, lives
-            // shows health as a number 0 > 100%
-            //show health as a string as follows:
+            Heal(5);
+            Console.ReadKey();
+
+            RegenerateSheild(5);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            RegenerateShield(5);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Revive();
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Heal(5);
+            Console.ReadKey();
+
+            RegenerateShield(5);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            RegenerateShield(5);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Revive();
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Heal(5);
+            Console.ReadKey();
+
+            RegenerateShield(5);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            RegenerateSheild(5);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            TakeDamage(50);
+            Console.ReadKey();
+            Console.Clear();
+
+            ShowHUD(health, healthStatus, shield, lives);
+            Console.ReadKey();
+
+            Revive();
+            Console.ReadKey();
+            Console.Clear();
 
         }
 
-        static void GetHealthStatus()
+        static void ShowHUD(int health, string healthStatus, int shield, int lives)
+        {
+            Console.WriteLine("\n-----------------------HUD-----------------------");
+            Console.WriteLine($"Health: {health}, {healthStatus}!");
+            Console.WriteLine($"Shield: {shield}");
+            Console.WriteLine($"Lives: {lives}");
+            Console.WriteLine("-------------------------------------------------\n");
+            Console.ReadKey();
+
+        }
+
+        static string GetHealthStatus(int health)
         {
             if (health == 100)
-                healthStatus = healthWord[0]; //Perfect Health
+                return "Perfect Health";
             else if (health >= 99)
-                    healthStatus = healthWord[1]; //Healthy
+                return "Healthy";
             else if (health >= 75)
-                healthStatus = healthWord[2]; //Hurt
+                return "Hurt";
             else if (health >= 50)
-                healthStatus = healthWord[3]; //Badly Hurt
+                return "Badly Hurt";
+            else if (health >= 25)
+                return "Imminent Danger";
             else
-                healthStatus = healthWord[4]; //Imminent Danger
+                return "You Died";
         }
 
         static void TakeDamage(int damage)
         {
-            //modifies health, shield
-            //shield depletes first
-            //health depletes second
-            //spill over effect: damage greater than remaining shield spills onto to health
-            //does not deplete lives when health reaches 0-- use Revive() (new!)
-            //does not reset shield and health to default values when you die --use Revive()(new!)
-            //based on parameter input(input describes how much damage is taken)
-            //range checking
-            //error checking
+            if (damage <= 0)
+            {
+                Console.WriteLine("Invalid Damage!");
+                return;
+            }
+
+            //damage shield first
+            if (shield > 0)
+            {
+                if (damage <= shield)
+                {
+                    shield -= damage;
+                    Console.WriteLine($"Shield took {damage} damage");
+                    damage = 0;
+                }
+                else
+                {
+                    damage -= shield; //spill over
+                    shield = 0;
+                }
+            }
+
+            //remaining damage hits health
+            if (damage > 0)
+            {
+                health -= damage;
+                Console.WriteLine($"You took {damage} damage");
+                if (health < 0) health = 0; //clamp
+
+                if (health == 0)
+                    Console.WriteLine("You died! use revive to continue");
+            }
         }
 
         static void Heal(int hp)
         {
-            //modifies health
-            //based on parameter input(input describes how much player is healed)
-            //range checking
+
+            if (hp <= 0)
+            {
+                Console.WriteLine("Invalid Heal!");
+                return;
+            }
+
+            //if dead
+            if (health <= 0)
+            {
+                Console.WriteLine("You cant heal the dead.");
+                return;
+            }
+
+            health += hp;
+
+            //health clamp
+            if (health > 100)
+                health = 100;
+
+            Console.WriteLine($"+{hp} hp");
+
         }
 
-        static int RegenerateSheild(int hp)
+        static void RegenerateShield(int regen)
         {
-            //regen sheild
-            //modifies shield
-            //based on parameter input(input describes how much shield should regenerate)
-            //range checking
-            //error checking
+
+            if (regen <= 0)
+            {
+                Console.WriteLine("Invalid shield regen");
+                return;
+            }
+
+            shield += regen;
+            Console.WriteLine($"+{regen} shield");
+
+            //sheild clamp
+            if (shield > 100)
+                shield = 100;
+            else if (shield < 0)
+                shield = 0;
+
         }
 
         static void Revive()
         {
-            //esets shield and health to default values
-            //uses up one life(new!)
-            //bringing a player back using a left-over life
-            //should be called when you die
+            if (health <= 0)
+            {
+                if (lives > 0)
+                {
+                    //use a life
+                    lives--;
+
+                    //bring back 
+                    health = 100;
+                    shield = 100;
+                    Console.WriteLine($"You've been revived. Lives remaining: {lives}");
+
+                }
+                else
+                {
+                    Console.WriteLine("Game Over!");
+                }
+            }
         }
-
-        //error checking = handles(incorrectly) passing in negative numbers, such as TakeDamage(-10)
-        //display error message that describes what happened
-        //do not modify values
-        //no actual gameplay required
-        //no hard coding
-
-
-/*Extra Mile - XP/Level Up System - Technical Specifications:
-
-variables:
-xp integer; 0.. (new!)
-level integer; 1.. (new!)
-methods:
-IncreaseXP(int exp) method
- modifies xp and level
-leveling up uses up xp -- this make it easier to code(new!)
-ShowHUD() method extended
-shows previous stats(see health system for reference)
-shows xp
-shows level
-xp/level design:
-same design as before, only now costs xp to level up -- easier to code(new!)
-start at 0 xp
-start at level 1
-at level 1, costs 100 xp to level up to level 2
-at level 2, costs 200 xp to level up to level 3
-at level 3, costs 300 xp to level up to level 4
-etc.
-no hard coding*/
     }
 }
